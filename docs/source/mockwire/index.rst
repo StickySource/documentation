@@ -189,3 +189,12 @@ If you prefer the package syntax::
 MockwireDependency
 
 :doc:`example`
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Contents:
+   
+   example
+
+
