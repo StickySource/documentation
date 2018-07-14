@@ -207,11 +207,18 @@ defaults.properties::
 
 This will result in aBean.field having value **found it** and anotherBean.veryNested having value **azul**
 
-Standard Coercions
-------------------
+Coercions
+---------
 
-Supporting new types
---------------------
+:doc:`coercions`
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Contents:
+   
+   coercions
+
 
 
 

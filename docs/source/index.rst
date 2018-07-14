@@ -13,7 +13,7 @@ Sticky Code takes the experience of convention over configuration frameworks and
 The framework is intended to allow developers to be deliberate all the time and to give them easy obvious decisions to encourage clean code at all times.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
    :includehidden:
    :caption: Contents:
    
@@ -27,6 +27,4 @@ The framework is intended to allow developers to be deliberate all the time and 
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
