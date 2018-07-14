@@ -168,3 +168,45 @@ getDefaultValue
 isInverted
 
   In some cases a coercion will return a fully fledged bean from the Dependency Injection container in which case there is no need for injection to happen to the configured value
+  
+
+Example coercion
+^^^^^^^^^^^^^^^^
+
+This is the Pattern Coercion::
+
+  package net.stickycode.coercion;
+
+  import java.util.regex.Pattern;
+  import java.util.regex.PatternSyntaxException;
+
+  import net.stickycode.stereotype.plugin.StickyExtension;
+
+  @StickyExtension (1)
+  public class PatternCoercion
+      extends AbstractNoDefaultCoercion<Pattern> { (2)
+
+    @Override
+    public Pattern coerce(CoercionTarget type, String value) (3)
+        throws PatternCouldNotBeCoercedException {
+      try {
+        return Pattern.compile(value);
+      }
+      catch (PatternSyntaxException e) {
+        throw new PatternCouldNotBeCoercedException(e, value); (4)
+      }
+    }
+
+    @Override
+    public boolean isApplicableTo(CoercionTarget type) {
+      return type.getType().isAssignableFrom(Pattern.class); (5)
+    }
+
+  }
+
+#. A coercion is just a component but uses the ``@StickyExtension`` stereotype because Guice needs it resolved up front
+#. Extending the abstract no default coercion to keep implementation simple and consistent
+#. The standard method returns a new Pattern
+#. I always use explicit exceptions as they are more meaningful that generic expections with odd messages
+#. The coercion is only valid for Pattern types
+
