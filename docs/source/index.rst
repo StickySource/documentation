@@ -20,8 +20,8 @@ The framework is intended to allow developers to be deliberate all the time and 
    getting-started/index
    composition/index
    stereotypes/index
-   mockwire/index
    configured/index
+   mockwire/index
    scheduled/index
 
 Indices and tables
