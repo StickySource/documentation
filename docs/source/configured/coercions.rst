@@ -204,7 +204,7 @@ This is the Pattern Coercion::
 
   }
 
-#. A coercion is just a component but uses the ``@StickyExtension`` stereotype because Guice needs it resolved up front
+#. The framework is made of components and a coercion is just a component and uses DI, the ``@StickyExtension`` stereotype allows framework components to be initialised first
 #. Extending the abstract no default coercion to keep implementation simple and consistent
 #. The standard method returns a new Pattern
 #. I always use explicit exceptions as they are more meaningful that generic expections with odd messages
