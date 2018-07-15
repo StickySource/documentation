@@ -166,6 +166,55 @@ Method hook for the developer to execute code as part of the configuration lifec
   * the url is typed so must be a value URL or whatever the type should be
   * sophisticated coercions can do extra checked to ensure the validaty as a cross cutting concern saving the developers cognitive load to just the business value they are adding
 
+@AfterConfiguration
+^^^^^^^^^^^^^^^^^^^^
+
+Method hook for the developer to execute code after everything is configured::
+
+  @StickyComponent
+  public class Bean {
+  
+    @Inject
+    ConfigurationSytem system;
+    
+    @AfterConfiguration
+    public void showConfiguration() { 
+      log.info("configuration {}", system.exportTree());
+    }
+    
+  }
+  
+@BeforeConfiguration
+^^^^^^^^^^^^^^^^^^^^
+
+Method hook for the developer to execute code as part of the configuration lifecycle::
+
+  @StickyComponent
+  public class Bean {
+    
+    @BeforeConfiguration
+    public void example() { 
+      // contrived example to show off before configuration
+    }
+    
+  }
+  
+@PreConfigured
+^^^^^^^^^^^^^^^
+
+Method hook for the developer to execute code as part of the configuration lifecycle::
+
+  @StickyComponent
+  public class Bean {
+    
+    @PreConfigured (1)
+    public void resetSomething() { (2)
+      // contrived example to show off pre configuration
+    }
+    
+  }
+  
+
 Configuration
 ^^^^^^^^^^^^^
 
