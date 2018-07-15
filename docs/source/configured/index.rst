@@ -259,12 +259,8 @@ This will result in aBean.field having value **found it** and anotherBean.veryNe
 Coercions
 ---------
 
-:doc:`coercions`
-
 .. toctree::
-   :maxdepth: 2
-   :hidden:
-   :caption: Contents:
+   :maxdepth: 4
    
    coercions
 
