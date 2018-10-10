@@ -85,8 +85,19 @@ Unpack a zip/jar into target/other::
           </execution>
         </executions>
       </plugin>
-      
-      
+
+How it works
+~~~~~~~~~~~~
+
+Its pretty straight forward, for gav net.stickycode:sticky-coercion:[2.1,3):
+
+* [2.1,3) is first resolved, in this case to 2.7 via metadata 
+* and the property sticky-coercion.version is set to 2.7
+* the artifact sticky-coercion-2.7 is resolved and downloaded if needed
+* the artifact is copied into the output directory
+
+Note that a Maven property is set in case you need to reference the artifact after its resolved.
+
 Happy Maven Plugin
 ------------------
 
