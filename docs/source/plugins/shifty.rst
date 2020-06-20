@@ -8,6 +8,7 @@ Similar to the dependency plugin but
 * efficiently leveraging metadata to be fast 
 * using version ranges for fluidity
 * using parallel execution where possible
+* record the resolved version for use in other plugins
 
 Usage
 ~~~~~
@@ -59,7 +60,7 @@ Unpack a zip/jar into target/shifty::
       </plugin>
       
       
-Unpack a zip/jar into target/other::
+Unpack a zip/jar into target/other and only include java files excluding exceptions::
 
      <plugin>
         <groupId>net.stickycode.plugins</groupId>
@@ -75,6 +76,12 @@ Unpack a zip/jar into target/other::
             <configuration>
               <outputDirectory>${project.build.directory}/other</outputDirectory>
               <unpack>true</unpack>
+              <includes>
+                <include>**/*.java</include>
+              </includes>
+              <excludes>
+                <exclude>**/*Exception.java</exclude>
+              </excludes
               <artifacts>
                 <artifact>net.stickycode:sticky-coercion:[2.1,3):sources:jar</artifact>
               </artifacts>
